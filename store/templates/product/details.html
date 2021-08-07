@@ -1,0 +1,39 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+
+<div class="pt-5">
+<div class="card mb-3 w-100 pt-5">
+  <div class="row g-0">
+      <div class="col-md-5  d-flex justify-content-center">
+      <img src="{{details.image.url}}" alt="...">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title h4">{{details.name}}</h5>
+        <p class="card-text">MRP-{{details.price}}-/-</p>
+        <p class="card-text">{{details.description}}</p>
+        <div class="btn me-2">
+            <button type="button" class="btn btn-outline-secondary mb-3 rounded-0">s</button>
+            <button type="button" class="btn btn-outline-secondary mb-3 rounded-0">m</button>
+            <button type="button" class="btn btn-outline-secondary mb-3 rounded-0">l</button>
+            <button type="button" class="btn btn-outline-secondary mb-3 rounded-0">xl</button>
+            <button type="button" class="btn btn-outline-secondary mb-3 rounded-0">xxl</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="row fixed-bottom">
+<div class="col-md-3"></div>
+<button type="button" class="btn btn-light btn-lg col-6 col-md-3 rounded-0">Add to Cart</button>
+<a class="btn btn-dark btn-lg col-6 col-md-3 rounded-0" href="/orders"><button type="button" class="btn btn-dark" >Order Now</button></a>
+<div class="col-md-3"></div>
+</div>
+
+
+{% endblock %}

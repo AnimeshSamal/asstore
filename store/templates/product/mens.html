@@ -1,0 +1,40 @@
+{% extends 'product/base.html' %}
+
+
+
+{% block content %}
+
+<div class="container p-0 ">
+   <div class="row row-cols-2 row-cols-md-4 mx-0">
+ {% for product in productmen %}
+    <div class="col p-0">
+    <div class="card" id="{product.id}">
+     <a href="/details/{{product.slug}}"><img src="{{product.image.url}}"  class="card-img-top"></a>
+     <div class="card-body row p-2 pb-0">
+       <p class="name col-7 ">{{product.name}} </p>
+       <p class="price col-5  d-flex justify-content-end">{{product.price}}</p>
+     </div>
+     <form action="/mens" method="POST">
+     {% csrf_token %}
+     <input hidden type='text' name="productmen" value="{{product.slug}}">
+     <input type="submit" class="card-footer w-100" value="Add to Cart">
+     </form>
+    </div>
+  </div>
+{% endfor %}
+</div>
+</div>
+
+<div class="row fixed-bottom p-1">
+<div class="col-md-3 col-1"></div>
+<button type="button" class="btn btn-outline-dark btn-lg bg-white col-5 col-md-3 border border-5  rounded-0">Sort</button>
+<button type="button" class="btn btn-outline-dark btn-lg bg-white col-5 col-md-3 border border-5  rounded-0">Filter</button>
+<div class="col-md-3 col-1 "></div>
+</div>
+{% endblock %}
+
+
+    
+
+
+
